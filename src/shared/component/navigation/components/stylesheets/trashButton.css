@@ -1,0 +1,11 @@
+button#trash-button {
+  background-image: url('../../../../images/trash-icon.png');
+  background-repeat: none;
+  background-color: #35393F;
+  /* background-size: 16px; */
+  width: 18px;
+  height: 20px;
+  border: none;
+  position: absolute;
+  right: 72px;
+}

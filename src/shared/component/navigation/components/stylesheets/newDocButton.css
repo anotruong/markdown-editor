@@ -1,0 +1,20 @@
+#new-doc-container {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  top: 117px;
+  display: flex;
+  justify-content: center;
+}
+
+button#new-doc {
+  width: 202px;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #E46643;
+  font-family: 'Roboto', 'san-serif';
+  font-size: 15px;
+  color: white;
+
+}

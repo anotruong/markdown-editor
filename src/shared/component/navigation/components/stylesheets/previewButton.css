@@ -1,0 +1,26 @@
+button {
+  background-repeat: no-repeat;
+  background-size: 16px;
+  border: none;
+  width: 16px;
+  height: 16px;
+  /* border: 1px solid red; */
+  /* position: absolute; */
+
+}
+
+button#preview-off {
+  background-image: url('../../../../images/open-eye-icon.png');
+}
+
+button#preview-on {
+  background-image: url('../../../../images/close-eye-icon.png');
+}
+
+#button-container {
+  width: 16px;
+  height: 16px;
+  /* Delgate space to 'edit bar.css' */
+  /* left: 343px; */
+  /* position:absolute; */
+}

@@ -12,4 +12,3 @@
 - Express.js
 - React.js
 - Node.js
-# markdown-editor
