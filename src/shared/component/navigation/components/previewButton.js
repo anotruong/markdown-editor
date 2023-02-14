@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { MarkdownContext } from '../../../context/markdownContext';
 
+import '../../darkmode/darkmode.css';
 import './stylesheets/previewButton.css';
 
 
 const PreviewButton = () => {
-  let { previewOn, setPreviewOn } = useContext(MarkdownContext)
+  const { previewOn, setPreviewOn } = useContext(MarkdownContext);
+  const { isToggled } = useContext(MarkdownContext);
 
   const previewHandler = () => {
     if (previewOn) {
@@ -19,15 +21,11 @@ const PreviewButton = () => {
 
   return(
     <div id='button-container'>
-      {!previewOn ? 
-        <button id="preview-off" 
-        onClick={previewHandler}
-        /> : <button id="preview-on" 
-        onClick={previewHandler}
-        />
-      } 
+      <button 
+        id={!previewOn ? "preview-off" : "preview-on"} 
+        className={!isToggled ? 'darkPreview' : 'lightPreview'}
+        onClick={previewHandler} />
      </div>
-    // <button id="preview-on" />
   )
 };
 

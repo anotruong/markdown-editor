@@ -31,19 +31,19 @@ const NaviButton = () => {
 
       divNames.forEach(id => {
         if(document.getElementById(id)) {
-          document.getElementById(id).style.marginLeft = "250px";
+          document.getElementById(id).style.left = "250px";
         }});
       
-      document.getElementById("sideNavi-container").style.marginLeft = "0px";
+      document.getElementById("sideNavi-container").style.left = "0px";
     } else {
       setSideMenuState(false);
 
       divNames.forEach(id => {
         if(document.getElementById(id)) {
-          document.getElementById(id).style.marginLeft = "0px";
+          document.getElementById(id).style.left = "0px";
         }});
 
-      document.getElementById("sideNavi-container").style.marginLeft = "-250px";
+      document.getElementById("sideNavi-container").style.left = "-250px";
     }
   }
   

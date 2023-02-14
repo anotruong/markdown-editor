@@ -2,14 +2,26 @@ import React, { useContext } from 'react';
 import PreviewButton from './components/previewButton';
 import { MarkdownContext } from '../../context/markdownContext';
 
+import '../darkmode/darkmode.css';
 import './edit-bar.css';
 
 const EditBar = () => {
-  const {previewOn} = useContext(MarkdownContext);
+  const { previewOn } = useContext(MarkdownContext);
+  const { isToggled } = useContext(MarkdownContext);
+
+  // const darkMode = () => !isToggled ? 'darkPreview' : 'lightPreview';
 
   return (
-    <div id='edit-container'>
-      <p id="page-title">{!previewOn ? 'markdown' : 'preview'}</p>
+    <div 
+      id='edit-container' 
+      className={!isToggled ? 'darkPreview' : 'lightPreview'}
+    >
+      <p 
+        id="page-title"
+        className={!isToggled ? 'darkPreview' : 'lightPreview'}
+      >
+        {!previewOn ? 'markdown' : 'preview'}
+      </p>
       <PreviewButton />
     </div>
   )

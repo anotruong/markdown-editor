@@ -10,11 +10,15 @@ button {
 }
 
 button#preview-off {
-  background-image: url('../../../../images/open-eye-icon.png');
+  background-position: center;
 }
 
-button#preview-on {
-  background-image: url('../../../../images/close-eye-icon.png');
+button#preview-off.lightPreview {
+  background-image: url('../../../../images/darkEye-open.png');
+}
+
+button#preview-on.lightPreview {
+  background-image: url('../../../../images/darkEye-closed.png');
 }
 
 #button-container {

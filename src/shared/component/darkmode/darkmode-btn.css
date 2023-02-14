@@ -1,0 +1,78 @@
+#darkmode-btn {
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  /* left: 14px; */
+  bottom: 37px; 
+  height: 28px;
+  width: 104px;
+  background-position: center;
+}
+
+#darkmode-btn.sunBG {
+  background-image: url('../../images/sunOn-moonOff.png');
+}
+
+#darkmode-btn.moonBG {
+  background-image: url('../../images/moonOn-sunOff.png');
+
+}
+
+/* a,
+blockquote {
+  color: #35393F;
+  background: aqua;
+} */
+
+label {
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  /* bottom: 37px;  */
+}
+
+input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+span {
+  position: absolute;
+  cursor: pointer;
+  background-color: #5A6069;
+  transition: 0.3s;
+  border-radius: 30px;
+  width: 48px;
+  height: 24px;
+  /* background-image: url('../../images/sunOn-moonOff.png'); */
+}
+
+span:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 7px;
+  top: 6px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+  /* background-image: url('../../images/moonOn-sunOff.png'); */
+}
+
+/* span::before,
+#darkmode-btn { */
+  /* background-image: url('../../images/moonOn-sunOff.png'); */
+
+/* } */
+
+input:checked + span {
+  background-color: #5A6069;
+}
+
+input:checked + span:before {
+  transform: translateX(21px);
+}
