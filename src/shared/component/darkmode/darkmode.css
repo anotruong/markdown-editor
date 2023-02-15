@@ -53,6 +53,7 @@ button#preview-on.darkPreview {
   color: white;
 }
 
+.delete-popup-dark > p,
 .markdown-dark > p,
 .markdown-dark > ol > li, 
 .markdown-dark > ul > li {
@@ -69,4 +70,23 @@ button#preview-on.darkPreview {
 .markdown-dark > blockquote > p > a:visited {
   color: white;
   text-decoration: none;
+}
+
+/* Delete Popup */
+
+.popup-dark {
+  /* background-color: #1D1F22;
+  width: 323px;
+  height: 218px; */
+  /* width: 323px;
+  height: 218px; */
+  background: black;
+  /* right: 40%;
+  top: 50%;
+  z-index: 3;
+  padding: 66p; */
+}
+
+.delete-popup-dark > p {
+
 }

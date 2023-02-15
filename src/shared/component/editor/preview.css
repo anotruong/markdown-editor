@@ -4,12 +4,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: 375px;
+  max-width: 100vh;
   position: absolute;
   top: 98px;
   /* border: 1px red solid */
   z-index: 1;
-  height: 570px;
+  height: 100vh;
   overflow-x: scroll;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */

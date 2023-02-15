@@ -10,7 +10,7 @@ Mobile View: 375 x 1551
   flex-direction: column;
   max-width: 375px;
   position: absolute;
-  height: 560px;
+  height: 100vh;
   top: 98px;
   z-index: 1;
 }
