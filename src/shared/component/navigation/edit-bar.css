@@ -28,3 +28,10 @@ p#page-title {
   width: 100px;
   margin: 0px 0px 0px 0px;
 }
+
+@media screen and (min-height: 869px) {
+  /* #edit-container {
+    max-height: 90vh;
+    min-height: 85.3vh;
+  } */
+}

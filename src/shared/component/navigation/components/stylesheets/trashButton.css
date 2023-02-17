@@ -58,6 +58,10 @@ button#trash-button {
 
 }
 
+h2#title {
+  color: black;
+}
+
 #close-btn {
  z-index: 3;
  width: 16px;

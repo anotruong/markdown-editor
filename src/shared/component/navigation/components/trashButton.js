@@ -35,7 +35,7 @@ const TrashButton = () => {
             style={{display: `${isDisplayed}`}}
             // trigger={isTrashed}
             >
-            <h2 style={{color: `${!isToggled ? 'white' : 'black'}`}}>Delete this Document?</h2>
+            <h2 id="title">Delete this Document?</h2>
             <p>Are you sure you want to delete the ‘welcome.md’ document and its contents? This action cannot be reversed.</p>
             {/* <button id='closed-btn' onClick={trashHandler} /> */}
             <button 
