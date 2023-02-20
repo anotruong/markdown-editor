@@ -35,12 +35,12 @@ const TrashButton = () => {
             style={{display: `${isDisplayed}`}}
             // trigger={isTrashed}
             >
-            <h2 id="title">Delete this Document?</h2>
-            <p>Are you sure you want to delete the ‘welcome.md’ document and its contents? This action cannot be reversed.</p>
+            <h2 id="title" style={{color: `${!isToggled ? 'white' : 'black'}`}}
+            >Delete this Document?</h2>
+            <p id='deleteText' style={{color: `${!isToggled ? '#C1C4CB' : '#7C8187'}`}}>Are you sure you want to delete the ‘welcome.md’ document and its contents? This action cannot be reversed.</p>
             {/* <button id='closed-btn' onClick={trashHandler} /> */}
             <button 
               id='confirm-btn' 
-              style={{color: `${!isToggled ? 'black' : 'white'}`}}
               onClick={trashHandler}>Continue & Delete</button>
           </div> 
         </div> 

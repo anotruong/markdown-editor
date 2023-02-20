@@ -8,13 +8,16 @@ import './edit-bar.css';
 const EditBar = () => {
   const { previewOn } = useContext(MarkdownContext);
   const { isToggled } = useContext(MarkdownContext);
-
+  const { sideMenuState } = useContext(MarkdownContext);
+  const closed = '250px';
+  const open = '0px';
   // const darkMode = () => !isToggled ? 'darkPreview' : 'lightPreview';
 
   return (
     <div 
       id='edit-container' 
       className={!isToggled ? 'darkPreview' : 'lightPreview'}
+      style={{left: `${!sideMenuState ? open : closed}`}}
     >
       <p 
         id="page-title"

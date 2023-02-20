@@ -1,4 +1,4 @@
-button#save-doc {
+button#save-btn {
   background-color: #E46643;
   background-repeat: no-repeat;
   background-image: url('../../../../images/save-icon.png');
@@ -11,4 +11,8 @@ button#save-doc {
   border: none;
   border-radius: 5px;
 
+}
+
+button#save-btn:hover {
+  background-color: #F39765;
 }

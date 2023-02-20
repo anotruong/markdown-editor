@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import SideMenu from './shared/component/navigation/sideMenu';
 
-import Textarea from './shared/component/editor/textarea';
+// import Textarea from './shared/component/editor/textarea';
 import HeaderNavi from './shared/component/navigation/headerNavi';
 import EditBar from './shared/component/navigation/edit-bar.js';
-import Preview from './shared/component/editor/preview';
+import Editor from './shared/component/editor/editor.js';
+// import Preview from './shared/component/editor/preview';
 import { MarkdownContext } from './shared/context/markdownContext.js';
 
 import { markdownText } from './shared/component/editor/components/introText';
@@ -27,7 +28,7 @@ function App() {
       }}> 
         <HeaderNavi />
         <EditBar />
-        {!previewOn ? <Textarea /> : <Preview />}
+        <Editor />
         <SideMenu />        
       </MarkdownContext.Provider>  
     </div>

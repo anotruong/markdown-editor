@@ -19,3 +19,7 @@ button#newDoc-btn {
   color: white;
 
 }
+
+button#newDoc-btn:hover {
+  background-color: #F39765;
+}

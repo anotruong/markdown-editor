@@ -9,8 +9,10 @@ Mobile View: 375 x 667
   align-items: center;
   flex-direction: column;
   position: absolute;
+  bottom: 0px;
+  /* left: 0px; */
   width: 100vw;
-  top: 98px;
+  /* top: 98px; */
   z-index: 1;
 }
 
@@ -48,8 +50,8 @@ textarea#editor {
 
 @media screen and (min-height: 821px) {
   textarea#editor {
-    max-height: 90vh;
-    /* min-height: 85.3vh; */
+    max-height: 89vh;
+    min-height: 85.3vh;
     height: 100%;
   }
 } 
@@ -87,3 +89,17 @@ textarea#editor {
     height: 100%;
   }
 } 
+
+@media screen and (min-width: 1024px) {
+  #textarea-container,
+  textarea#editor {
+    width: 672px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  #textarea-container,
+  textarea#editor {
+    width: 50vw;
+  }
+}

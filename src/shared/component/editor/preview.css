@@ -5,7 +5,9 @@
   max-width: 100vw;
   width: 100vw;
   position: absolute;
-  top: 98px;
+  bottom: 0px;
+  /* right: 0px; */
+  /* top: 98px; */
   /* border: 1px red solid */
   z-index: 1;
   /* height: 569px;*/
@@ -165,6 +167,7 @@ pre > code {
   }
 }
 
+
 @media screen and (min-height: 756px) {
   #preview-flex {
     max-height: 88vh;
@@ -198,6 +201,7 @@ pre > code {
   #preview-flex {
     min-height: 92vh;
     height: 100%;
+    max-width: 672px;
   }
 } 
 
@@ -206,4 +210,18 @@ pre > code {
     min-height: 93vh;
     height: 100%;
   }
-} 
+}  
+
+@media screen and (min-width: 1024px) {
+  #preview-flex,
+  .markdown-light,
+  .markdown-dark {
+    width: 672px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  #preview-flex {
+    width: 50vw;
+  }
+}

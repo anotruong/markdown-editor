@@ -39,6 +39,18 @@ p#doc-title {
 
 }
 
+#markdown {
+  margin: 0px;
+  border-right: 1px solid #979797;
+  width: 160px;
+  height: 40px;
+  background-image: url('../../images/markdown-icon.png');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  position: relative;
+  left: 24px;
+}
+
 /* .file-icon {
   background-image: url('../../../image/file-icon.png');
   background-repeat: no-repeat;

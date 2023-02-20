@@ -58,9 +58,9 @@ button#trash-button {
 
 }
 
-h2#title {
+/* h2#title {
   color: black;
-}
+} */
 
 #close-btn {
  z-index: 3;
@@ -79,6 +79,7 @@ h2#title {
   border: none;
   border-radius: 5px;
   background-color: #E46643;
+  color: white;
   z-index: 3;
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -86,7 +87,6 @@ h2#title {
   line-height: 18px;
   letter-spacing: 0px;
   text-align: center;
-
 }
 
 h2 {

@@ -8,7 +8,7 @@ import { MarkdownContext } from '../../context/markdownContext';
 import '../darkmode/darkmode.css';
 import './preview.css';
 
-const Preview = (doc) => {
+const Preview = (props) => {
   const { textareaInput } = useContext(MarkdownContext);
   const { isToggled } = useContext(MarkdownContext);
   
@@ -18,7 +18,8 @@ const Preview = (doc) => {
   return (
     <div 
       id='preview-flex' 
-      className={!isToggled ? 'darkEditor' : 'lightEditor'}>
+      className={!isToggled ? 'darkEditor' : 'lightEditor'}
+      style={props.style}>
       {/* <div id='markdown'> */}
       {/* <ReactMarkdown className='markdown'> */}
       <ReactMarkdown 

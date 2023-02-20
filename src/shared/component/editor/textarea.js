@@ -7,7 +7,7 @@ import './textarea.css';
 // This preview will be considered a separte page for the mobile browser
 //will appear next to the textarea on the tablet and desktop view.
 
-const Textarea = () => {
+const Textarea = (props) => {
   const { textareaInput, setTextareaInput } = useContext(MarkdownContext);
   const { isToggled } = useContext(MarkdownContext);
 
@@ -17,7 +17,10 @@ const Textarea = () => {
 
   return (
     <div 
-      id='textarea-container' >
+      id='textarea-container' 
+      className={!isToggled ? 'darkEditor' : 'lightEditor'}
+      style={props.style}
+    >
       <textarea 
         id='editor' 
         className={!isToggled ? "darkEditor" : "lightEditor"}
