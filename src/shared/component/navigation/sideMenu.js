@@ -1,22 +1,9 @@
-/* 
-Desktop view:
-Tablet view:
-Mobile View:
-
-Icons: 
-  Delete icon
-  sidemenu icon
-  name of the document
-  new document
-
-Effects:
-  Pushes the document to the side.
-*/
-
 import React, { useContext } from 'react';
 import { MarkdownContext } from '../../context/markdownContext.js';
 import NewDocButton from './components/newDocButton.js';
 import DarkmodeBtn from '../darkmode/darkmode-btn.js';
+import DocumentList from './components/documentList.js';
+
 import './sideMenu.css';
 
 const SideMenu = () => {
@@ -26,8 +13,6 @@ const SideMenu = () => {
   const open = '-250px';
 
   let browserWidth = window.innerWidth;
-
-  // console.log(typeof w )
 
   const logState = state => {
     console.log("Toggled:", state);
@@ -46,6 +31,7 @@ const SideMenu = () => {
         // toggled={true}
         onClick={logState} 
       />
+      <DocumentList />
     </div>
   )
 }
