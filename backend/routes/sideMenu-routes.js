@@ -13,4 +13,7 @@ router.get('/', sideMenuControllers.getDate);
 // Will return title 
 // router.get('/', sideMenuControllers.getTitle);
 
+router.patch('/'); //new document
+
+
 module.exports = router;

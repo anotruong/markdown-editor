@@ -11,6 +11,17 @@ const TESTER_OBJ = [
   }
 ];
 
+const createDocument = (req, res, next) => {
+  const { title, description, date } = req.body;
+
+  const newDoc = {
+    name: title,
+    description,
+    date
+  };
+  res.status(201).json(); //status code that means new item created.
+}
+
 //retrieve date from mongoDb
 const getDate = (req, res, next) => {
   const dateDisplay = TESTER_OBJ.map(obj => obj.date);
@@ -40,5 +51,6 @@ const getTitle = (req, res, next) => {
 
 };
 
+exports.createDocument = createDocument;
 exports.getDate = getDate;
 exports.getTitle = getTitle;

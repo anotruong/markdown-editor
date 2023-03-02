@@ -2,26 +2,15 @@ const express = require('express');
 
 const router = express.Router();
 
-// create a new document
-const createDocument = (req, res, next) => {
-  const { title, description, date } = req.body;
+const navigation = require('../controllers/navigation-controller');
 
-  const newDoc = {
-    name: title,
-    description,
-    date
-  };
 
-  TESTER_OBJ.push(newDoc); //unshift(newDoc)
+router.post('/', places)
 
-  res.status(201).json(); //status code that means new item created.
-}
+router.patch('/', navigation.changeDocTitle);
 
-// router.get('/', (req, res, next) => {
-//   console.log('GET request in Places'); 
+router.patch('/', navigation.saveDoc); //save document
 
-//   // takes any data that can be be converted to valid json. string/array/obj/boolean
-//   res.json({message: 'It works!'});
-// });
+router.delete('/', navigation.deleteDoc); //delete document
 
 module.exports = router;
