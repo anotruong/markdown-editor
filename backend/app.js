@@ -9,10 +9,11 @@ const sideMenuRoutes = require('./routes/sideMenu-routes');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(naviRoutes);
+app.use('/', naviRoutes);
 
-app.use(sideMenuRoutes);
+app.use('/', sideMenuRoutes);
 
 app.use((error, req, res, next) => {
   if (res.headerSent) {

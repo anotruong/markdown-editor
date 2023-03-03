@@ -1,3 +1,8 @@
+const { v4: uuidv4 } = require('uuid');
+const { validatorResult } = require('express-validator');
+
+const HttpError = require('../models/http-error');
+
 const TESTER_OBJ = [
   {
     id: 'obj1',
@@ -10,6 +15,22 @@ const TESTER_OBJ = [
     date: '20230401'
   }
 ];
+
+const createDoc = (req, res, next) => {
+  validatorResult(req);
+
+  const { title, description } = req.body;
+
+  const createdDoc = {
+    id: uuidv4(),
+    title,
+    description
+    // date will be added later using a built in method.
+  }
+
+  res.status(201).json({newDox: createdDoc})
+
+}
 
 //retrieve date from mongoDb
 const getDate = (req, res, next) => {
@@ -40,5 +61,6 @@ const getTitle = (req, res, next) => {
 
 };
 
+exports.createDoc = createDoc;
 exports.getDate = getDate;
 exports.getTitle = getTitle;

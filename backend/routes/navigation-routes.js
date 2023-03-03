@@ -1,27 +1,24 @@
 const express = require('express');
+const { check } = require('express-validator');
 
 const router = express.Router();
 
-// create a new document
-const createDocument = (req, res, next) => {
-  const { title, description, date } = req.body;
+const naviController = require('../controllers/navigation-controller');
 
-  const newDoc = {
-    name: title,
-    description,
-    date
-  };
+router.post('/', 
+  [
+    check('title')
+      .not()
+      .isEmpty(),
+    check('description')
+      .not()
+      .isEmpty()
+      .isLength({ min: 5 })
+  ], 
+    naviController.saveDoc); //'description' is the markdown document
 
-  TESTER_OBJ.push(newDoc); //unshift(newDoc)
+// router.patch('/', naviController.saveDoc);
 
-  res.status(201).json(); //status code that means new item created.
-}
-
-// router.get('/', (req, res, next) => {
-//   console.log('GET request in Places'); 
-
-//   // takes any data that can be be converted to valid json. string/array/obj/boolean
-//   res.json({message: 'It works!'});
-// });
+router.delete('/', naviController.deleteDoc); 
 
 module.exports = router;
