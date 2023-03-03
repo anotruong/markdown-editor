@@ -5,7 +5,7 @@ const router = express.Router();
 
 const naviController = require('../controllers/navigation-controller');
 
-router.post('/', 
+router.patch('/', 
   [
     check('title')
       .not()
