@@ -3,6 +3,8 @@ const express = require('express');
 //middleware that parses request body of incoming requests
 const bodyParser = require('body-parser');
 
+const mongoose = require('mongoose');
+
 const naviRoutes = require('./routes/navigation-routes');
 const sideMenuRoutes = require('./routes/sideMenu-routes');
 
@@ -24,4 +26,10 @@ app.use((error, req, res, next) => {
   res.json({message: error.message || 'An unknown error occured!'});
 })
 
-app.listen(3000);
+mongoose
+  .connect('mongodb+srv://markdown:markdown123@atlascluster.kzp1cx3.mongodb.net/markdown?retryWrites=true&w=majority')
+  .then(() => {
+    app.listen(3000);
+  })
+  .catch(error => console.log(error));
+
