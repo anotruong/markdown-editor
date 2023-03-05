@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/', naviRoutes);
 
-app.use('/', sideMenuRoutes);
+app.use('/api/doc', sideMenuRoutes);
 
 app.use((error, req, res, next) => {
   if (res.headerSent) {
@@ -32,4 +32,3 @@ mongoose
     app.listen(3000);
   })
   .catch(error => console.log(error));
-
