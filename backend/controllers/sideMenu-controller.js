@@ -1,10 +1,12 @@
 // const { v4: uuidv4 } = require('uuid');
+const mongoose = require('mongoose')
 const { validationResult } = require('express-validator');
 
 const HttpError = require('../models/http-error');
 
-const NewDoc = require('../models/newDoc');
+const newDoc = require('../models/newDoc');
 const TodayDate = require('../models/date');
+const { modelName } = require('../models/newDoc');
 
 const TESTER_OBJ = [
   {
@@ -20,19 +22,30 @@ const TESTER_OBJ = [
 ];
 
 const createDoc = async(req, res, next) => {
-  await validationResult(req);
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return next(
+      new HttpError('Invalid inputs passed, please check your data.', 422)
+    );
+  }
 
   const { title, description } = req.body;
 
-  const createdDoc = new NewDoc({
+  // console.log(db.version())
+
+  const createdDoc = new newDoc({
     title,
     description,
     date: TodayDate()
   });
 
   try {
-    //built in function for mongoose. Will autocreate 'id' in database
-    //It's also an async function as it's a promise.
+    console.log(mongoose.connection.readyState) //check conenction
+    console.log(createdDoc)
+
+    // await createdDoc.markModified('object');
+
     await createdDoc.save();
   } catch(err) {
     const error = new HttpError(
@@ -41,9 +54,7 @@ const createDoc = async(req, res, next) => {
     return next(error);
   }
 
-
-  res.status(201).json({newDox: createdDoc})
-
+  res.status(201).json({newDoc: createdDoc});
 }
 
 //retrieve date from mongoDb

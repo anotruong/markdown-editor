@@ -5,8 +5,7 @@ const router = express.Router();
 
 const navigation = require('../controllers/navigation-controller');
 
-
-router.post('/', places)
+// router.post('/', places)
 
 router.patch('/', navigation.changeDocTitle);
 

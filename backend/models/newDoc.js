@@ -8,5 +8,7 @@ const newDocSchema = new Schema ({
   date: { type: String, required: true }
 })
 
-module.exports = mongoose.model('Documents', newDocSchema);
+const newDoc = mongoose.model('Documents', newDocSchema);
+
+module.exports = newDoc;
 //return a constructor function.
