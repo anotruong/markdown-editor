@@ -21,7 +21,7 @@ const TESTER_OBJ = [
   }
 ];
 
-const createDoc = async(req, res, next) => {
+const createDoc = async (req, res, next) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -41,12 +41,7 @@ const createDoc = async(req, res, next) => {
   });
 
   try {
-    console.log(mongoose.connection.readyState) //check conenction
-    console.log(createdDoc)
-
-    // await createdDoc.markModified('object');
-
-    await createdDoc.save();
+    await createdDoc.save()
   } catch(err) {
     const error = new HttpError(
       'Creating doc failed, please try again.', 500
@@ -54,6 +49,7 @@ const createDoc = async(req, res, next) => {
     return next(error);
   }
 
+  
   res.status(201).json({newDoc: createdDoc});
 }
 
@@ -66,9 +62,7 @@ const getDate = (req, res, next) => {
   // }
 
   res.json({dateDisplay});
-
-
-}
+};
 
 // retrieve title from mongoDB
 const getTitle = (req, res, next) => {
