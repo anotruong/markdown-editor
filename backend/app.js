@@ -13,7 +13,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use('/', naviRoutes);
+app.use('/navi', naviRoutes);
 
 app.use('/api/doc', sideMenuRoutes);
 
