@@ -1,12 +1,10 @@
-// const { v4: uuidv4 } = require('uuid');
-const mongoose = require('mongoose')
 const { validationResult } = require('express-validator');
 
 const HttpError = require('../models/http-error');
 
-const newDoc = require('../models/newDoc');
+const Docs = require('../models/newDoc');
 const TodayDate = require('../models/date');
-const { modelName } = require('../models/newDoc');
+// const { modelName } = require('../models/newDoc');
 
 const TESTER_OBJ = [
   {
@@ -32,9 +30,7 @@ const createDoc = async (req, res, next) => {
 
   const { title, description } = req.body;
 
-  // console.log(db.version())
-
-  const createdDoc = new newDoc({
+  const createdDoc = new Docs({
     title,
     description,
     date: TodayDate()
@@ -48,23 +44,67 @@ const createDoc = async (req, res, next) => {
     );
     return next(error);
   }
-
-  
-  res.status(201).json({newDoc: createdDoc});
+  res.status(201).json({Docs: createdDoc});
 }
 
-//retrieve date from mongoDb
-const getDate = (req, res, next) => {
-  // const dateDisplay = TESTER_OBJ.map(obj => obj.date);
+// const getDoc = async (req, res, next) => {
+  /*How do I want this function to run?
+  
+  Explicit: 
+    Retrieve and return date and title for a particular document.
+  
+  Implicit:
+    Iterates through the database.
+    returns the 'date' and 'title' values.
+    The uses the values and displays them on the front end.
+    WOULD it be better to split the functions?
 
-  // if (!dateDisplay) {
-  //   return next(new HttpError('Could not find a place for provided user id'));
+  DS: Obj -> String
+
+  Algo:
+    START takes no arguments.
+    ITERATES through the database.
+    RETURNS 'date' and 'title' values.
+
+    Use POST to send a res.json to the front end.
+  */
+  // try {
+
+  // } catch(err) {
+  //   const error = new HttpError(
+  //     'Something went wrong, could not find doc', 500
+  //   )
+  //   next(error);
   // }
+// };
 
-  res.json({dateDisplay});
+
+//retrieve date from mongoDb
+const getDate = async (req, res, next) => {
+  const docId = req.params.did;
+
+  let currentDocs;
+
+  try {
+    currentDocs = await Docs.findById(docId);
+  } catch(err) {
+    const error = new HttpError(
+      "Something's wrong", 500
+    );
+    return next(error);
+  }
+
+  if (!currentDocs) {
+    const error = new HttpError(
+      'Could not find provided Id', 404
+    );
+    return next(error);
+  }
+
+  res.json({ Docs: currentDocs.toObject( {getters: true }) });
 };
 
-// retrieve title from mongoDB
+// // retrieve title from mongoDB
 const getTitle = (req, res, next) => {
   // console.log('GET request in Side Menu');
   // res.json({message: 'side menu works!'});

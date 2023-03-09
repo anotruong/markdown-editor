@@ -9,8 +9,8 @@ const navigation = require('../controllers/navigation-controller');
 
 router.patch('/', navigation.changeDocTitle);
 
-router.patch('/', navigation.saveDoc); //save document
+router.patch('/:did', navigation.saveDoc); //save document
 
-router.delete('/', navigation.deleteDoc); //delete document
+router.delete('/:did', navigation.deleteDoc); //delete document
 
 module.exports = router;

@@ -2,6 +2,7 @@
 //comes with a timestamp
 const { validationResult } = require('express-validator');
 const HttpError = require('../models/http-error');
+const Docs = require('../models/newDoc');
 
 let TESTER_OBJ = [
   {
@@ -28,36 +29,65 @@ const displayDocTitle = (req, res, next) => {
   //Match the document to the obj displayed.
 }; //Display regardless if side menu is displayed or not
 
-const deleteDoc = (req, res, next) => {
-  const { id } = req.body;
-  //const currentDocID; find the document's id. Have it posted to 
+const deleteDoc = async (req, res, next) => {
+  const docId = req.params.did;
 
-  if (!TESTER_OBJ.filter(obj => obj.id = id)) {
-    throw new HttpError('Could not find document');
+  let doc;
+
+  try {
+    doc = await Docs.findById(docId);
+  } catch(err) {
+    const error = new HttpError(
+      'Can not delete', 500
+    );
+    next(error);
   }
 
-  TESTER_OBJ.filter(obj => obj.id = id)
+  try {
+    doc.remove();
+  } catch(err) {
+    const error = new HttpError(
+      'Can not delete', 500
+    );
+    next(error);
+  }
+  
   res.status(200).json({message: 'Deleted place.'})
 };
 
-const saveDoc = (req, res, next) => {
+const saveDoc = async (req, res, next) => {
   const errors = validationResult(req);
-  if (!error.isEmpty()) {
+  if (!errors.isEmpty()) {
     console.log(errors);
     throw new HttpError('Invalid inputs passed, please check', 422)
   }
-  const { id, title, description } = req.body;
+  const { title, description } = req.body;
+  const docId = req.params.did;
+
+  let openDoc;
   
-  //function should search if the id is existig and overwrite the function.
-  const savedDocument = {
-    id,
-    title, //may not need title if save button only saves document
-    description
+  try {
+    openDoc = await Docs.findById(docId);
+  } catch(err) {
+    const error = new HttpError(
+      "Can't update", 500
+    );
+    next(error);
   }
 
-  TESTER_OBJ.push(savedDocument);
+  openDoc.title = title;
+  openDoc.description = description;
+
+  try {
+    await openDoc.save();
+  } catch(err) {
+    const error = new HttpError(
+      "Could not save document", 500
+    );
+    next(error);
+  }
   
-  res.status(200).json({docTester: savedDocument})
+  res.status(200).json({ Docs: openDoc.toObject({ getters: true }) });
 
 };
 
