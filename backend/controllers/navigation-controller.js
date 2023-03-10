@@ -32,24 +32,26 @@ const displayDocTitle = (req, res, next) => {
 const deleteDoc = async (req, res, next) => {
   const docId = req.params.did;
 
-  let doc;
+  let deleteDoc;
 
   try {
-    doc = await Docs.findById(docId);
+    deleteDoc = await Docs.findById(docId);
+    console.log(deleteDoc)
   } catch(err) {
     const error = new HttpError(
-      'Can not delete', 500
+      'Unable to find doc', 500
     );
-    next(error);
+    return next(error);
   }
 
   try {
-    doc.remove();
+    //remove() method has been depreciated. 
+    await deleteDoc.deleteOne();
   } catch(err) {
     const error = new HttpError(
-      'Can not delete', 500
+      'Unable to delete', 500
     );
-    next(error);
+    return next(error);
   }
   
   res.status(200).json({message: 'Deleted place.'})
