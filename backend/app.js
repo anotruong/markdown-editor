@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/navi', naviRoutes);
 
-app.use('/api/doc', sideMenuRoutes);
+app.use('/', sideMenuRoutes);
 
 app.use((error, req, res, next) => {
   if (res.headerSent) {
@@ -29,6 +29,6 @@ app.use((error, req, res, next) => {
 mongoose
   .connect('mongodb+srv://markdown:markdown123@atlascluster.kzp1cx3.mongodb.net/markdown?retryWrites=true&w=majority')
   .then(() => {
-    app.listen(3000);
+    app.listen(5000);
   })
   .catch(error => console.log(error));

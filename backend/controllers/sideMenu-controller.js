@@ -47,7 +47,7 @@ const createDoc = async (req, res, next) => {
   res.status(201).json({Docs: createdDoc});
 }
 
-// const getDoc = async (req, res, next) => {
+const getDocs = async (req, res, next) => {
   /*How do I want this function to run?
   
   Explicit: 
@@ -68,15 +68,20 @@ const createDoc = async (req, res, next) => {
 
     Use POST to send a res.json to the front end.
   */
-  // try {
 
-  // } catch(err) {
-  //   const error = new HttpError(
-  //     'Something went wrong, could not find doc', 500
-  //   )
-  //   next(error);
-  // }
-// };
+  let documentsList;
+
+  try {
+    documentsList = await Docs.find({}, 'date title');
+  } catch(err) {
+    const error = new HttpError(
+      'Fetching users failed', 500
+    )
+    return next(error);
+  }
+
+  res.json({documentsList: documentsList.map(docs => docs.toObject()) });
+};
 
 
 //retrieve date from mongoDb
@@ -124,4 +129,5 @@ const getTitle = (req, res, next) => {
 
 exports.createDoc = createDoc;
 exports.getDate = getDate;
+exports.getDocs = getDocs;
 exports.getTitle = getTitle;

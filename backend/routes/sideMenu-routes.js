@@ -1,5 +1,5 @@
 const express = require('express');
-// const { check } = require('express-validator');
+const { check } = require('express-validator');
 
 const sideMenuControllers = require('../controllers/sideMenu-controller');
 
@@ -10,11 +10,20 @@ const router = express.Router();
 // will return date
 router.get('/:did', sideMenuControllers.getDate);
 
-// Will return title 
-// router.get('/', sideMenuControllers.getTitle);
+// Will return entire obj 
+router.get('/', sideMenuControllers.getDocs);
 
 //create a new document
-router.post('/', sideMenuControllers.createDoc);
+router.post(
+  '/', 
+  [
+    check('title')
+      .not()
+      .isEmpty(),
+    check('description')
+      .isLength({ min: 5 })
+  ],
+  sideMenuControllers.createDoc);
   //Do we need to validate a new document?
 
 
