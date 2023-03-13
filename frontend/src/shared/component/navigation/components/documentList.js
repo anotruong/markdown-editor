@@ -19,6 +19,8 @@ const DocumentList = (props) => {
     }
   };
 
+  //Figure out a way to turn data fetched from backend and plugging them into clickable links or icons.
+
   let objToArr = Object.entries(tempObj);
 
   //retreving a list of doc objects from MongoDb
@@ -40,25 +42,26 @@ const DocumentList = (props) => {
   //     console.log(err);
   //   }
   // }
-  useEffect(() => {
-    const sendRequest = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch('http://localhost:5000/api/navi')
-        const responseData = await response.json();
 
-        if (!response.ok) {
-          throw new Error(responseData.message);
-        }
+  // useEffect(() => {
+  //   const sendRequest = async () => {
+  //     setIsLoading(true);
+  //     try {
+  //       const response = await fetch('http://localhost:5000/api/navi')
+  //       const responseData = await response.json();
+
+  //       if (!response.ok) {
+  //         throw new Error(responseData.message);
+  //       }
   
-        setLoadedDocs(responseData.Docs);
-      } catch(err) {
-        setIsLoading(false);
-      }
-      setError(err.message);
-    }
-    sendRequest();
-  }, [])
+  //       setLoadedDocs(responseData.Docs);
+  //     } catch(err) {
+  //       setIsLoading(false);
+  //     }
+  //     setError(err.message);
+  //   }
+  //   sendRequest();
+  // }, [])
 
   return(
     <div id='document-container' style={{color: 'white'}}>

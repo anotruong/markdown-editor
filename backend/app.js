@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/navi', naviRoutes);
 
-app.use('/', sideMenuRoutes);
+app.use('/sideMenu', sideMenuRoutes);
 
 app.use((error, req, res, next) => {
   if (res.headerSent) {

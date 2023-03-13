@@ -31,15 +31,5 @@ This markdown editor allows for inline-code snippets, like this: \`<p>I'm inline
 <main>
   <h1>This is a larger code block</h1>
 </main>
-\`\`\` `
-
-// const intialText = () => {
-//   const [setTextareaInput] = useContext(MarkdownContext);
-
-// }
-
-// (function() {
-//   const [setTextareaInput] = useContext(MarkdownContext);
-
-//   setTextareaInput(markdownText);
-// })();
+\`\`\` 
+`

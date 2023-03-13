@@ -2,15 +2,20 @@ import React, { useContext } from 'react';
 
 import NaviButton from './components/naviButton';
 import TrashButton from './components/trashButton';
-
 import SaveButton from './components/saveButton';
+
 import { MarkdownContext } from '../../context/markdownContext';
 import './headerNavi.css';
 
 
 const HeaderNavi = () => {
 
-  const { sideMenuState } = useContext(MarkdownContext);
+  const { 
+    sideMenuState, 
+    docTitle, 
+    setDocTitle 
+  } = useContext(MarkdownContext);
+  
   const closed = '250px';
   const open = '0px';
   let browserWidth = window.innerWidth;
@@ -23,8 +28,9 @@ const HeaderNavi = () => {
     >
       <div id='header-menu'>
         <NaviButton />
+        {/* change the field into input field later */}
         {browserWidth > 1249 ? <div id='markdown' /> : <></>}
-        <p id='doc-title' style={{left: titlePosition}}>Title of Doc</p>
+        <p id='doc-title' style={{left: titlePosition}}>{docTitle}</p>
         <TrashButton />
         <SaveButton />
       </div>

@@ -17,6 +17,7 @@ function App() {
   const [textareaInput, setTextareaInput] = useState(markdownText);
   const [sideMenuState, setSideMenuState] = useState(false);
   const [isToggled, setToggle] = useState(true);
+  const [docTitle, setDocTitle] = useState('Untitled');
   
   return (
     <div id="App" >
@@ -24,7 +25,8 @@ function App() {
         previewOn, setPreviewOn,
         textareaInput, setTextareaInput,
         sideMenuState, setSideMenuState,
-        isToggled, setToggle
+        isToggled, setToggle,
+        docTitle, setDocTitle
       }}> 
         <HeaderNavi />
         <EditBar />
