@@ -11,6 +11,9 @@ const Textarea = (props) => {
   const { textareaInput, setTextareaInput } = useContext(MarkdownContext);
   const { isToggled } = useContext(MarkdownContext);
 
+  //there should be a default intro text.
+  //if the document is a new document, should it use the intro text?
+  
   const inputHandler = (userInput) => {
     setTextareaInput(userInput);
   }

@@ -28,7 +28,8 @@ const HeaderNavi = () => {
     >
       <div id='header-menu'>
         <NaviButton />
-        {/* change the field into input field later */}
+        {/* change the field into input field later
+          title is saved with the save button. */}
         {browserWidth > 1249 ? <div id='markdown' /> : <></>}
         <p id='doc-title' style={{left: titlePosition}}>{docTitle}</p>
         <TrashButton />
