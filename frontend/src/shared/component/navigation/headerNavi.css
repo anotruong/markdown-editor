@@ -26,7 +26,7 @@
   background-color: #5A6069;
 }
 
-p#doc-title {
+/* p#doc-title {
   background-image: url('../../images/file-icon.png');
   background-repeat: no-repeat;
   background-size: 13.71px 16px;
@@ -37,7 +37,7 @@ p#doc-title {
   color: white;
   margin: 0px 0px 0px 0px;
 
-}
+} */
 
 #markdown {
   margin: 0px;
