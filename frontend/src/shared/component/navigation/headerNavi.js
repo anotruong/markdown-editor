@@ -13,8 +13,7 @@ const HeaderNavi = () => {
 
   const { 
     sideMenuState, 
-    docTitle, 
-    setDocTitle 
+    docTitle 
   } = useContext(MarkdownContext);
   
   const closed = '250px';
@@ -36,7 +35,7 @@ const HeaderNavi = () => {
           title is saved with the save button. */}
         {browserWidth > 1249 ? <div id='markdown' /> : <></>}
         {/* <p id='doc-title' style={{left: titlePosition}}>{docTitle}</p> */}
-        <TitleInput style={{left: titlePosition}} placeholder='title.md' />
+        <TitleInput style={{left: titlePosition}} placeholder={docTitle} />
         <TrashButton />
         <SaveButton />
       </div>

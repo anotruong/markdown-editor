@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MarkdownContext } from '../../../context/markdownContext';
 
 import './stylesheets/titleInput.css';
 
-const titleInput = (props) => {
+const TitleInput = (props) => {
+
+  const { setDocTitle } = useContext(MarkdownContext);
+
+  // console.log(event.target.value)
+  const setTitle = event => {
+    console.log(event.target.value)
+
+    // setDocTitle(event.target.value);
+    //this will set the doc title which will be then saved to the backend once the the save btn is clicked.
+  };
 
   return (
     <div id="doc-title">
       <ul>
-        <input placeholder={props.placeholder}/>
+        <input 
+          placeholder={props.placeholder}
+          onChange={setTitle}
+        />
       </ul>
     </div>
   );
 };
 
-export default titleInput;
+export default TitleInput;
