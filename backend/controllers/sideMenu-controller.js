@@ -69,6 +69,7 @@ const getDocs = async (req, res, next) => {
     Use POST to send a res.json to the front end.
   */
 
+  //return a list of objects.
   let documentsList;
 
   try {

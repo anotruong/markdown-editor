@@ -18,6 +18,7 @@ function App() {
   const [sideMenuState, setSideMenuState] = useState(false);
   const [isToggled, setToggle] = useState(true);
   const [docTitle, setDocTitle] = useState('Untitled');
+  const [docId, setDocId] = useState('');
   
   return (
     <div id="App" >
@@ -26,7 +27,8 @@ function App() {
         textareaInput, setTextareaInput,
         sideMenuState, setSideMenuState,
         isToggled, setToggle,
-        docTitle, setDocTitle
+        docTitle, setDocTitle,
+        docId, setDocId
       }}> 
         <HeaderNavi />
         <EditBar />

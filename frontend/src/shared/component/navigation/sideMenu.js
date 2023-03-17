@@ -26,12 +26,12 @@ const SideMenu = () => {
       {browserWidth <= 1249 ? <h3 id='title' >Markdown</h3> : ''}
       <p id='myDoc'>my documents</p>
       <NewDocButton />
+      <DocumentList />
       <DarkmodeBtn 
         // label="sun"
         // toggled={true}
         onClick={logState} 
       />
-      <DocumentList />
     </div>
   )
 }

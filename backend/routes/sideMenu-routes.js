@@ -8,7 +8,7 @@ const HttpError = require('../models/http-error');
 const router = express.Router();
 
 // will return date
-router.get('/:did', sideMenuControllers.getDate);
+// router.get('/:did', sideMenuControllers.getDate);
 
 // Will return entire obj 
 router.get('/', sideMenuControllers.getDocs);
