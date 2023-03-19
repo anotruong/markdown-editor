@@ -1,11 +1,19 @@
-import React, { useContext, useEffect } from 'react';
-import { MarkdownContext } from '../../../context/markdownContext';
+import React, { 
+  // useContext, 
+  // useEffect 
+} from 'react';
+// import { MarkdownContext } from '../../../context/markdownContext';
 
 import './stylesheets/docItem.css';
 
 //This component displays the documents.
 const DocumentLink = (docObj) => {
   // const { setDocId } = useContext(MarkdownContext);
+  let date = docObj.items.date;
+  let title = docObj.items.title;
+  let id = docObj.items._id;
+
+  console.log(title)
 
   // passes in an object
   //should also accept an ID and share that via hook
@@ -16,8 +24,8 @@ const DocumentLink = (docObj) => {
 
   return (
     <div className='documentLink-container'>
-      <p className='date'>{docObj.date}</p>
-      <p className='link' >{docObj.title}</p>
+      <p className='date'>{date}</p>
+      <p className='link' style={{color: 'white'}}>{title}</p>
     </div>
   )
 }

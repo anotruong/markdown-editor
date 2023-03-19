@@ -25,20 +25,29 @@ const DocumentList = (props) => {
 
   let objToArr = Object.entries(tempObj);
 
+  // let documentsLists;
+
   useEffect(() => {
     const sendRequest = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('http://localhost:5001/sideMenu')
+        const response = await fetch('http://localhost:5001/sideMenu');
         const responseData = await response.json();
+        let list = responseData.documentsList;
+        let arrTest = [];
 
-        console.log(`response: ${response}`);
-        console.log(`responseData: ${responseData}`);
+        for (props of list) {
+          let object = JSON.parse(props)
+          arrTest.push(object)
+        }
+
+        console.log(arrTest[0])
+  
         if (!response.ok) {
-          throw new Error(responseData.message);
+          throw new Error(arrTest.message);
         }
   
-        setLoadedDocs(responseData.Docs);
+        setLoadedDocs(arrTest);
       } catch(err) {
         setError(err.message);
       }
@@ -55,9 +64,10 @@ const DocumentList = (props) => {
   return(
     <div id='document-container' style={{color: 'white'}}>
       <div className="tester">
-        {/* {objToArr.map(([_, value]) => ( */}
-          {/*  <DocItem items={loadedDocs} /> */}
-        {/* ))} */}
+        {loadedDocs.map(obj => (
+           <DocItem items={obj} />
+        ))}
+
       </div>
     </div>
   );
