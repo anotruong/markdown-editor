@@ -10,6 +10,14 @@
   height: 36px;
 }
 
+button#docLink {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  text-align: left;
+  padding: 0px;
+}
+
 p.date {
   font-size: 13px;
   font-weight: 300;

@@ -31,7 +31,7 @@ const NewDocButton = () => {
       if (response.ok) {
         throw new Error(responseData.message);
       }
-      console.log(responseData)
+      // console.log(responseData)
 
       setIsLoading(false);
     } catch(err) {
