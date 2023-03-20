@@ -19,7 +19,9 @@ function App() {
   const [isToggled, setToggle] = useState(true);
   const [docTitle, setDocTitle] = useState('Untitled');
   const [docId, setDocId] = useState('');
-  
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentDocId, setCurrentDocId] = useState('');
+
   return (
     <div id="App" >
       <MarkdownContext.Provider value={{
@@ -28,7 +30,9 @@ function App() {
         sideMenuState, setSideMenuState,
         isToggled, setToggle,
         docTitle, setDocTitle,
-        docId, setDocId
+        docId, setDocId,
+        isLoading, setIsLoading,
+        currentDocId, setCurrentDocId
       }}> 
         <HeaderNavi />
         <EditBar />

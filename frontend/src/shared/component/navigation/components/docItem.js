@@ -13,15 +13,6 @@ const DocumentLink = (docObj) => {
   let title = docObj.items.title;
   let id = docObj.items._id;
 
-  console.log(title)
-
-  // passes in an object
-  //should also accept an ID and share that via hook
-
-  // useEffect(() => {
-  //   setDocId(docObj.id);
-  // }, []);
-
   return (
     <div className='documentLink-container'>
       <p className='date'>{date}</p>
