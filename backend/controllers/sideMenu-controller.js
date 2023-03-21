@@ -6,18 +6,18 @@ const Docs = require('../models/newDoc');
 const TodayDate = require('../models/date');
 // const { modelName } = require('../models/newDoc');
 
-const TESTER_OBJ = [
-  {
-    id: 'obj1',
-    title: 'cat bathing in sunlight.md',
-    date: '20230131'
-  },
-  {
-    id: 'obj2',
-    title: 'koala love hugs.md',
-    date: '20230401'
-  }
-];
+// const TESTER_OBJ = [
+//   {
+//     id: 'obj1',
+//     title: 'cat bathing in sunlight.md',
+//     date: '20230131'
+//   },
+//   {
+//     id: 'obj2',
+//     title: 'koala love hugs.md',
+//     date: '20230401'
+//   }
+// ];
 
 const createDoc = async (req, res, next) => {
   const errors = validationResult(req);
@@ -73,7 +73,7 @@ const getDocs = async (req, res, next) => {
   let documentsList;
 
   try {
-    documentsList = await Docs.find({}, 'date title');
+    documentsList = await Docs.find({}, 'date description title');
   } catch(err) {
     const error = new HttpError(
       'Fetching users failed', 500
@@ -81,7 +81,9 @@ const getDocs = async (req, res, next) => {
     return next(error);
   }
 
-  res.json({documentsList: documentsList.map(docs => docs.toObject()) });
+  res.json({
+    documentsList: documentsList.map(docs => JSON.stringify(docs.toObject())) 
+  });
 };
 
 

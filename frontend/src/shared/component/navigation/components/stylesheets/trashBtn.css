@@ -18,6 +18,13 @@ button#trash-button {
   display: none;
 } */
 
+#cancel-btn {
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  background: transparent;
+}
+
 #delete-container {
   top:0; 
   left: 0;
@@ -50,6 +57,10 @@ button#trash-button {
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+p#deleteText {
+  text-align: left;
 }
 
 .popup-light {

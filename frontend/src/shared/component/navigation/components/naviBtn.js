@@ -7,7 +7,7 @@ import './stylesheets/naviBtn.css';
 
 const NaviButton = () => {
 
-  const {sideMenuState, setSideMenuState} = useContext(MarkdownContext);
+  const { sideMenuState, setSideMenuState } = useContext(MarkdownContext);
 
   const sideMenuHandler = () => {
 

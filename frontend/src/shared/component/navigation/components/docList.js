@@ -6,10 +6,10 @@ import './stylesheets/docList.css';
 
 //This component will display a list of objects in a form of buttons/links
 const DocumentList = (props) => {
-  const { isLoading, setIsLoading}  = useContext(MarkdownContext);
+  const { isLoading, setIsLoading }  = useContext(MarkdownContext);
   
-  const [error, setError] = useState();
-  const [loadedDocs, setLoadedDocs] = useState();
+  const [ error, setError ] = useState();
+  const [ loadedDocs, setLoadedDocs ] = useState();
 
   //Figure out a way to turn data fetched from backend and plugging them into clickable links or icons.
 

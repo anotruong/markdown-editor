@@ -9,7 +9,7 @@ const SaveButton = () => {
     docTitle,
     currentDocId
   } = useContext(MarkdownContext);
-  const [error, setError] = useState();
+  const [ error, setError ] = useState();
 
     //trigger POST with onclick of save button.
   // const saveDoc = async event => {

@@ -27,7 +27,7 @@ router.post(
   //Do we need to validate a new document?
 
 
-router.patch('/'); //new document
+// router.patch('/'); //new document
 
 
 module.exports = router;
