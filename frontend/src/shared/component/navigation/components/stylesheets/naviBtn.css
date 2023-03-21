@@ -1,0 +1,12 @@
+button#navi-button {
+  /* background-image: url('../../../../images/navigation-icon.png'); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #5A6069;
+  width: 56px;
+  height: 56px;
+  border: none;
+  left: 0px;
+
+  
+}

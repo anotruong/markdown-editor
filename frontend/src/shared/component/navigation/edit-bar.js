@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import PreviewButton from './components/previewButton';
+import PreviewButton from './components/previewBtn';
 import { MarkdownContext } from '../../context/markdownContext';
 
 import '../darkmode/darkmode.css';

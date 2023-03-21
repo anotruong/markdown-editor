@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { MarkdownContext } from '../../context/markdownContext.js';
-import NewDocButton from './components/newDocButton.js';
+import NewDocBtn from './components/newDocBtn';
 import DarkmodeBtn from '../darkmode/darkmode-btn.js';
-import DocumentList from './components/documentList.js';
+import DocumentList from './components/docList.js';
 
 import './sideMenu.css';
 
@@ -25,7 +25,7 @@ const SideMenu = () => {
     >
       {browserWidth <= 1249 ? <h3 id='title' >Markdown</h3> : ''}
       <p id='myDoc'>my documents</p>
-      <NewDocButton />
+      <NewDocBtn />
       <DocumentList />
       <DarkmodeBtn 
         // label="sun"

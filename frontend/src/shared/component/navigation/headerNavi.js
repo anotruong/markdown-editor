@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
-import NaviButton from './components/naviButton';
-import TrashButton from './components/trashButton';
-import SaveButton from './components/saveButton';
+import NaviButton from './components/naviBtn';
+import TrashButton from './components/trashBtn';
+import SaveButton from './components/saveBtn';
 import TitleInput from './components/titleInput';
 
 import { MarkdownContext } from '../../context/markdownContext';
