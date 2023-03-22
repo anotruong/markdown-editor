@@ -87,50 +87,50 @@ const getDocs = async (req, res, next) => {
 };
 
 
-//retrieve date from mongoDb
-const getDate = async (req, res, next) => {
-  const docId = req.params.did;
+// //retrieve date from mongoDb
+// const getDate = async (req, res, next) => {
+//   const docId = req.params.did;
 
-  let currentDocs;
+//   let currentDocs;
 
-  try {
-    currentDocs = await Docs.findById(docId);
-  } catch(err) {
-    const error = new HttpError(
-      "Something's wrong", 500
-    );
-    return next(error);
-  }
+//   try {
+//     currentDocs = await Docs.findById(docId);
+//   } catch(err) {
+//     const error = new HttpError(
+//       "Something's wrong", 500
+//     );
+//     return next(error);
+//   }
 
-  if (!currentDocs) {
-    const error = new HttpError(
-      'Could not find provided Id', 404
-    );
-    return next(error);
-  }
+//   if (!currentDocs) {
+//     const error = new HttpError(
+//       'Could not find provided Id', 404
+//     );
+//     return next(error);
+//   }
 
-  res.json({ Docs: currentDocs.toObject( {getters: true }) });
-};
+//   res.json({ Docs: currentDocs.toObject( {getters: true }) });
+// };
 
-// // retrieve title from mongoDB
-const getTitle = (req, res, next) => {
-  // console.log('GET request in Side Menu');
-  // res.json({message: 'side menu works!'});
+// // // retrieve title from mongoDB
+// const getTitle = (req, res, next) => {
+//   // console.log('GET request in Side Menu');
+//   // res.json({message: 'side menu works!'});
 
-  //find the title and date
-  const titleDisplay = TESTER_OBJ.map(obj => [obj.title, obj.date]);
+//   //find the title and date
+//   const titleDisplay = TESTER_OBJ.map(obj => [obj.title, obj.date]);
 
-  if (!titleDisplay) {
-    return next(new HttpError('Could not find a place for provided user id'));
-  }
+//   if (!titleDisplay) {
+//     return next(new HttpError('Could not find a place for provided user id'));
+//   }
 
-  // const fileDates = TESTER_OBJ.map(obj)
-  // console.log(fileDisplay)
-  res.json({titleDisplay})
+//   // const fileDates = TESTER_OBJ.map(obj)
+//   // console.log(fileDisplay)
+//   res.json({titleDisplay})
 
-};
+// };
 
 exports.createDoc = createDoc;
-exports.getDate = getDate;
+// exports.getDate = getDate;
 exports.getDocs = getDocs;
-exports.getTitle = getTitle;
+// exports.getTitle = getTitle;

@@ -18,16 +18,16 @@ let TESTER_OBJ = [
   }
 ];
 
-const changeDocTitle = () => {
-  // const { title } = req.body; or retrieve it fro mthe displayDoc function
-  //Title will be changed when the user clicks on the title. 
-  //change onEnter?
-};
+// const changeDocTitle = () => {
+//   // const { title } = req.body; or retrieve it fro mthe displayDoc function
+//   //Title will be changed when the user clicks on the title. 
+//   //change onEnter?
+// };
 
-const displayDocTitle = (req, res, next) => {
-  const { title } = req.body;
-  //Match the document to the obj displayed.
-}; //Display regardless if side menu is displayed or not
+// const displayDocTitle = (req, res, next) => {
+//   const { title } = req.body;
+//   //Match the document to the obj displayed.
+// }; //Display regardless if side menu is displayed or not
 
 const deleteDoc = async (req, res, next) => {
   const docId = req.params.did;
@@ -94,7 +94,7 @@ const saveDoc = async (req, res, next) => {
 };
 
 
-exports.changeDocTitle = changeDocTitle;
-exports.displayDocTitle = displayDocTitle;
+// exports.changeDocTitle = changeDocTitle;
+// exports.displayDocTitle = displayDocTitle;
 exports.deleteDoc = deleteDoc;
 exports.saveDoc = saveDoc;

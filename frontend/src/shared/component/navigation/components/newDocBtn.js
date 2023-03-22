@@ -17,7 +17,7 @@ const NewDocButton = () => {
         'http://localhost:5001/sideMenu', 
         'POST', 
         JSON.stringify({
-          title: 'untitled',
+          title: 'untitled.md',
           description: markdownText
         }),
         {

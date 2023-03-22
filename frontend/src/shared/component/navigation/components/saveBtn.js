@@ -26,7 +26,7 @@ const SaveButton = () => {
         },
         body: JSON.stringify({
           id: currentDocId,
-          title: docTitle,
+          title: docTitle + ".md",
           description: textareaInput
         })
       })
