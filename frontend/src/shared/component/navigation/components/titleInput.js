@@ -20,7 +20,7 @@ const TitleInput = (props) => {
 
 
 
-    console.log(title);
+    console.log(`titleHandler: ${docTitle}`);
 
     setDocTitle(title);
     //this will set the doc title which will be then saved to the backend once the the save btn is clicked.
@@ -31,8 +31,8 @@ const TitleInput = (props) => {
       <ul>
         <input 
           placeholder={props.placeholder}
-          onChange={titleHandler}
-          value={formatHandler}
+          onInput={titleHandler}
+          // value={formatHandler}
         />
       </ul>
     </div>

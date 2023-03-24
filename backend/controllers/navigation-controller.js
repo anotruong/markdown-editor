@@ -70,6 +70,8 @@ const saveDoc = async (req, res, next) => {
   
   try {
     openDoc = await Docs.findById(docId);
+    console.log(openDocs)
+    // openDoc.updateOne()
   } catch(err) {
     const error = new HttpError(
       "Can't update", 500

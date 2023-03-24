@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { MarkdownContext } from '../../../context/markdownContext';
 import { useHttpClient } from '../../../hooks/http-hook';
 
@@ -10,7 +10,6 @@ const TrashButton = () => {
   const { isLoading, error, sendRequest } = useHttpClient();
   const [ isTrashed, setTrashed ] = useState(false);
   const [ isDisplayed, setDisplay ] = useState('none');
-  // let display ¿˘ 'none';
 
   const deleteHandler = async () => {
     try {
@@ -31,6 +30,8 @@ const TrashButton = () => {
 
     setDisplay(isDisplayed === 'block' ? 'none' : 'block');
   }
+
+
 
   return (
     // <button id='trash-button' onClick={trashHandler}/>
@@ -60,7 +61,7 @@ const TrashButton = () => {
               <p id='deleteText' style={{color: `${!isToggled ? '#C1C4CB' : '#7C8187'}`}}>
                 Are you sure you want to delete the "{docTitle}" document and its contents? This action cannot be reversed.
               </p>
-              {/* <button id='closed-btn' onClick={trashHandler} /> */}
+              <button id='closed-btn' onClick={confirmTrashHandler} />
               <button 
                 id='confirm-btn' 
                 onClick={deleteHandler}
