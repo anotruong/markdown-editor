@@ -21,10 +21,9 @@ const SaveButton = () => {
 
     try {
      await sendRequest(
-        `http://localhost:5000/navi/${currentDocId}`,
+        `http://localhost:5001/navi/${currentDocId}`,
         'PATCH',
         JSON.stringify({
-              id: currentDocId,
               title: docTitle + ".md",
               description: textareaInput
         }),
