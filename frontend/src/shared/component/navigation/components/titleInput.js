@@ -28,7 +28,7 @@ const TitleInput = (props) => {
 
   return (
     <div id="doc-title">
-      <ul>
+      <ul id='title'>
         <input 
           placeholder={props.placeholder}
           onInput={titleHandler}

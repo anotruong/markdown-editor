@@ -1,4 +1,4 @@
-button#trash-button {
+button#trash-btn {
   background-image: url('../../../../images/trash-icon.png');
   background-repeat: none;
   background-color: #35393F;
@@ -9,14 +9,6 @@ button#trash-button {
   position: absolute;
   right: 72px;
 }
-
-/* #trash-container{
-  width: 100vw;
-  height: 100%;
-  position: fixed;
-  z-index: 99;
-  display: none;
-} */
 
 #cancel-btn {
   height: 100vh;
@@ -78,6 +70,9 @@ p#deleteText {
  width: 16px;
  height: 16px;
  background-color: pink;
+ top: 350px;
+ right: 55px;
+ position: absolute;
 }
 
 #confirm-btn {

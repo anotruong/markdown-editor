@@ -38,10 +38,10 @@ input::placeholder {
   color: white;
 }
 
-ul {
+ul#title {
   height: 100%;
   width: 100%;
   top: -17px;
-  left: 30px;
+  left: 20px;
   position: absolute;
 }

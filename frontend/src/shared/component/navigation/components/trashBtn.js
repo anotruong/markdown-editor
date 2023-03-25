@@ -6,8 +6,12 @@ import '../../darkmode/darkmode.css';
 import './stylesheets/trashBtn.css';
 
 const TrashButton = () => {
-  const { docTitle, isToggled, currentDocId } = useContext(MarkdownContext);
-  const { isLoading, error, sendRequest } = useHttpClient();
+  const { 
+    docTitle, 
+    isToggled, 
+    currentDocId 
+  } = useContext(MarkdownContext);
+  const { sendRequest } = useHttpClient();
   const [ isTrashed, setTrashed ] = useState(false);
   const [ isDisplayed, setDisplay ] = useState('none');
 
@@ -18,41 +22,35 @@ const TrashButton = () => {
         'DELETE'
       )
     } catch(err) {
-      // console.log(err);
     };
 
     setDisplay('none');
+
+    //clear 'description' and 'title' to clear
   };
 
-  const confirmTrashHandler = () => {
+  const trashHandler = () => {
     setTrashed(!isTrashed);
     console.log(`isTrashed: ${isTrashed}`)
 
     setDisplay(isDisplayed === 'block' ? 'none' : 'block');
   }
 
-
-
   return (
-    // <button id='trash-button' onClick={trashHandler}/>
-
     <React.Fragment>
-      {/* <div id='trash-container'> */}
-      <button id='trash-button' onClick={confirmTrashHandler}/>
+      <button id='trash-btn' onClick={trashHandler}/>
 
-      {/* </div> */}
       {/* the blurred background */}  
       <div id='delete-container' style={{display: `${isDisplayed}`}}>
-        {/* <button
+        <button
           id='cancel-btn'
           onClick={trashHandler}
-          > */}
+          >
           <div id='delete-flex'>
             <div 
               id='delete-popup'
               className={!isToggled ? 'popup-dark' : 'popup-light'}
               style={{display: `${isDisplayed}`}}
-              // trigger={isTrashed}
               >
               <h2 id="title" style={{color: `${!isToggled ? 'white' : 'black'}`}}
               >
@@ -61,21 +59,15 @@ const TrashButton = () => {
               <p id='deleteText' style={{color: `${!isToggled ? '#C1C4CB' : '#7C8187'}`}}>
                 Are you sure you want to delete the "{docTitle}" document and its contents? This action cannot be reversed.
               </p>
-              <button id='closed-btn' onClick={confirmTrashHandler} />
               <button 
                 id='confirm-btn' 
                 onClick={deleteHandler}
               >
                 Continue & Delete
               </button>
-              {/* <button 
-                id='cancel-btn' 
-                style={{color: `${!isToggled ? 'black' : 'white'}`}}
-                onClick={cancelHandler}
-              /> */}
             </div> 
           </div> 
-        {/* </button> */}
+        </button>
       </div> 
     </React.Fragment>
   )
