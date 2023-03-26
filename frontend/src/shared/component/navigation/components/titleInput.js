@@ -4,6 +4,12 @@ import { MarkdownContext } from '../../../context/markdownContext';
 import './stylesheets/titleInput.css';
 
 const TitleInput = (props) => {
+  let browserWidth = window.innerWidth;
+  let docTitleShow = browserWidth > 1239 ? <p id="doc-name">Document Name</p> : <></>; 
+  
+  // if (browserWidth > 1239) {
+  //   docTitleShow = <p id="doc-name">Document Name</p>
+  // }
 
   const { docTitle, setDocTitle } = useContext(MarkdownContext);
 
@@ -16,9 +22,6 @@ const TitleInput = (props) => {
   // console.log(event.target.value)
   const titleHandler = event => {
     let title = event.target.value;
-    // console.log(title);
-
-
 
     console.log(`titleHandler: ${docTitle}`);
 
@@ -27,12 +30,19 @@ const TitleInput = (props) => {
   }; 
 
   return (
-    <div id="doc-title">
-      <ul id='title'>
+    <div 
+      id="doc-title"
+      style={{left: `${browserWidth > 1249 ? "270px" : "80px"}`}}
+    >
+      {docTitleShow}
+      <ul 
+        id='title'
+        style={{height: `${browserWidth > 1249 ? "0px" : "20px"}`}}
+
+      >
         <input 
           placeholder={props.placeholder}
           onInput={titleHandler}
-          // value={formatHandler}
         />
       </ul>
     </div>

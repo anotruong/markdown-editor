@@ -8,8 +8,16 @@
   text-transform: lowercase;
   color: white;
   margin: 0px 0px 0px 0px;
-  height: 18px;
+  /* height: 18px; */
+  height: 40px;
   width: 116px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  height: 40px;
+  background-position-y: center;
 }
 
 input {
@@ -38,10 +46,15 @@ input::placeholder {
   color: white;
 }
 
+p#doc-name {
+  text-transform: none;
+}
+
 ul#title {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
-  top: -17px;
-  left: 20px;
+  height: 20px;
+  /* top: -17px;
+  left: 20px; */
   position: absolute;
 }
