@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "start": "nodemon app.js"
   },
   "keywords": [],
