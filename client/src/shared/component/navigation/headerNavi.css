@@ -1,0 +1,59 @@
+#header-container {
+  width: 100%;
+  height: 56px;
+  /* display: flex; */
+  /* border: .5px red solid; */
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  z-index: 2;
+  position: fixed;
+}
+
+#header-menu {
+  width: 100%;
+  height: 100%;
+  /* border: 1px red solid; */
+  background-color: #35393F;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  ;
+}
+
+#button-navi {
+  background-color: #5A6069;
+}
+
+/* p#doc-title {
+  background-image: url('../../images/file-icon.png');
+  background-repeat: no-repeat;
+  background-size: 13.71px 16px;
+  padding-left: 32px;
+  position: absolute;
+  left: 80px;
+  text-transform: lowercase;
+  color: white;
+  margin: 0px 0px 0px 0px;
+
+} */
+
+#markdown {
+  margin: 0px;
+  border-right: 1px solid #979797;
+  width: 160px;
+  height: 40px;
+  background-image: url('../../images/markdown-icon.png');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  position: relative;
+  left: 24px;
+}
+
+/* .file-icon {
+  background-image: url('../../../image/file-icon.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 80px;
+} */

@@ -1,0 +1,105 @@
+/* 
+Desktop view: 1440 x 1250
+Tablet view: 768 x 1538
+Mobile View: 375 x 667
+*/
+
+#textarea-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0px;
+  /* left: 0px; */
+  width: 100vw;
+  /* top: 98px; */
+  z-index: 1;
+}
+
+textarea#editor {
+  /* max-height: 89vh; */
+  /* min-height: 85.3vh; */
+  height: 85.3vh;
+  width: 100vw;
+  padding: 16px 20px 16px 20px;
+  word-wrap: normal;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+/* longer mobile display */
+
+@media screen and (min-height: 670px) {
+  textarea#editor {
+    min-height: 86vh;
+    height: 100%;
+  }
+}
+
+@media screen and (min-height: 756px) {
+  textarea#editor {
+    max-height: 88vh;
+    height: 100%;
+  }
+}
+
+/* desktop and tablet displays */ 
+
+@media screen and (min-height: 821px) {
+  textarea#editor {
+    max-height: 89vh;
+    min-height: 85.3vh;
+    height: 100%;
+  }
+} 
+
+@media screen and (min-height: 960px) {
+  textarea#editor {
+    /* max-height: 98vh; */
+    min-height: 90vh;
+    height: 100%;
+  }
+} 
+
+@media screen and (min-height: 1024px) {
+  textarea#editor {
+    /* max-height: 98vh; */
+    min-height: 91vh;
+    height: 100%;
+  }
+} 
+
+@media screen and (min-height: 1090px) {
+  /* #textarea-container */
+  textarea#editor {
+    /* max-height: 98vh; */
+    min-height: 92vh;
+    height: 100%;
+  }
+} 
+
+@media screen and (min-height: 1230px) {
+  /* #textarea-container */
+  textarea#editor {
+    /* max-height: 98vh; */
+    min-height: 93vh;
+    height: 100%;
+  }
+} 
+
+@media screen and (min-width: 1024px) {
+  #textarea-container,
+  textarea#editor {
+    width: 672px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  #textarea-container,
+  textarea#editor {
+    width: 50vw;
+  }
+}

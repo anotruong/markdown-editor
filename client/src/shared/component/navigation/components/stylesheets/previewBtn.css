@@ -1,0 +1,30 @@
+button {
+  background-repeat: no-repeat;
+  background-size: 16px;
+  border: none;
+  width: 16px;
+  height: 16px;
+  /* border: 1px solid red; */
+  /* position: absolute; */
+
+}
+
+button#preview-off {
+  background-position: center;
+}
+
+button#preview-off.lightPreview {
+  background-image: url('../../../../images/darkEye-open.png');
+}
+
+button#preview-on.lightPreview {
+  background-image: url('../../../../images/darkEye-closed.png');
+}
+
+#button-container {
+  width: 16px;
+  height: 16px;
+  /* Delgate space to 'edit bar.css' */
+  /* left: 343px; */
+  /* position:absolute; */
+}

@@ -1,0 +1,60 @@
+#doc-title {
+  background-image: url('../../../../images/file-icon.png');
+  background-repeat: no-repeat;
+  background-size: 13.71px 16px;
+  padding-left: 32px;
+  position: absolute;
+  left: 80px;
+  text-transform: lowercase;
+  color: white;
+  margin: 0px 0px 0px 0px;
+  /* height: 18px; */
+  height: 40px;
+  width: 116px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  height: 40px;
+  background-position-y: center;
+}
+
+input {
+  height: 18px;
+  width: 116px;
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  font-family: 'Roboto', 'san-serif';
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: white;
+  background-color: transparent;
+  border: none;
+  opacity: 100%;
+}
+
+input::focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: white;
+}
+
+p#doc-name {
+  text-transform: none;
+}
+
+ul#title {
+  /* height: 100%; */
+  width: 100%;
+  height: 20px;
+  /* top: -17px;
+  left: 20px; */
+  position: absolute;
+}

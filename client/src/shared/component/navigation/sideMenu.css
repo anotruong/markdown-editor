@@ -1,0 +1,41 @@
+#sideNavi-container {
+  width: 250px;
+  background-color: #1D1F22;
+  height: 100vh;
+  /* position: relative; */
+  /* margin-left: -250px; */
+  /* z-index: 1; */
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  padding: 27px 24px 27px 24px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+h3#title {
+  font-family: 'Commissioner', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 5px;
+  text-align: left;
+  text-transform: uppercase;
+  color: white;
+  /* text-align: center; */
+  margin-bottom: 27px;
+  position: relative
+}
+
+p#myDoc {
+  color: #7C8187;
+  font-family: 'Roboto', 'san-serifs';
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 29px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 16.41px;
+}

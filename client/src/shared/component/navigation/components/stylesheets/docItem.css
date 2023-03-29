@@ -1,0 +1,46 @@
+.documentLink-container {
+  background-image: url('../../../../images/file-icon.png');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  padding-left: 30px;
+  margin-bottom: 26px;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  letter-spacing: 0px;
+  height: 36px;
+}
+
+button#docLink {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  text-align: left;
+  padding: 0px;
+}
+
+p.date {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 15px;
+  color: #7C8187;
+  margin: 0px;
+}
+
+p.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #FFFFFF;
+
+}
+
+a.link {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #FFFFFF;
+  text-decoration: none;
+}

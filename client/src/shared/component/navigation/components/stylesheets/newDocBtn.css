@@ -1,0 +1,25 @@
+#newDoc-container {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  margin-bottom: 24px;
+  /* top: 117px; */
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+button#newDoc-btn {
+  width: 202px;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #E46643;
+  font-family: 'Roboto', 'san-serif';
+  font-size: 15px;
+  color: white;
+
+}
+
+button#newDoc-btn:hover {
+  background-color: #F39765;
+}

@@ -1,0 +1,71 @@
+#editor-container {
+  position: absolute;
+  height: 85vh;
+  width: 100vw;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+
+  /* border: red 1px solid; */
+}
+
+/* longer mobile display */
+
+@media screen and (min-height: 670px) {
+  #editor-container {
+    min-height: 86vh;
+    height: 100%;
+  }
+}
+
+@media screen and (min-height: 756px) {
+  #editor-container {
+    max-height: 88vh;
+    height: 100%;
+  }
+}
+
+/* desktop and tablet displays */ 
+
+@media screen and (min-height: 821px) {
+  #editor-container {
+    max-height: 90vh;
+    /* min-height: 85.3vh; */
+    height: 100%;
+  }
+} 
+
+@media screen and (min-height: 960px) {
+  #editor-container {
+    /* max-height: 98vh; */
+    min-height: 90vh;
+    height: 100%;
+  }
+} 
+
+@media screen and (min-height: 1024px) {
+  #editor-container {
+    /* max-height: 98vh; */
+    min-height: 91vh;
+    height: 100%;
+  }
+} 
+
+@media screen and (min-height: 1090px) {
+  /* #textarea-container */
+  #editor-container {
+    /* max-height: 98vh; */
+    min-height: 92vh;
+    height: 100%;
+  }
+} 
+
+@media screen and (min-height: 1230px) {
+  /* #textarea-container */
+  #editor-container {
+    /* max-height: 98vh; */
+    min-height: 93vh;
+    height: 100%;
+  }
+} 
